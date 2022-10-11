@@ -5,7 +5,11 @@ require 'check_login.php';
 $name_receiver = $_POST['name_receiver'];
 $phone_receiver = $_POST['phone_receiver'];
 $address_receiver = $_POST['address_receiver'];
-
+if(empty($_POST['name_receiver']) || empty($_POST['phone_receiver']) ||empty($_POST['address_receiver'])){
+	$_SESSION['error_fill'] = "Vui lòng điền đầy đủ thông tin";
+	header('location:view_cart.php');
+	exit;
+}
 require '../admin/connect.php';
 $cart = $_SESSION['cart'];
 $total_price = 0;
@@ -15,7 +19,7 @@ foreach ($cart as $each) {
 //bai 24 tu 1:34:00
 //có thể tryền cái sum ở body_view_cart trong form dưới theo dạng hidden để lấy tiếp giá trị sum, nhưng khi khách hàng ấn source code có thể thấy và chỉnh sửa được nên mình chỉ lưu nó ở SS, xử lí trong back end
 $customer_id = $_SESSION['id'];
-$status = 0;
+$status = 1;
 
 $sql = "insert into orders(customer_id,name_receiver,phone_receiver,address_receiver,status,total_price)
 values('$customer_id','$name_receiver','$phone_receiver','$address_receiver','$status','$total_price') ";

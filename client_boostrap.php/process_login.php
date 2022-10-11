@@ -1,4 +1,5 @@
-<?php 
+<?php
+require 'check_login.php'; 
 $email = $_POST['email'];
 $password = $_POST['password'];
 

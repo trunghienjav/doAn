@@ -12,9 +12,6 @@ require '../check_super_admin_login.php'; ?>
 <div id="general">
 	<div id="top">
 		<h1>Khu vực nhà sản xuất</h1>
-		<a class="link" href="manufacture_insert.php">
-			Thêm nhà sản xuất
-		</a>
 		<?php require '../menu.php' ?>
 	</div>
 	<div id="middle">

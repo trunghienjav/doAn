@@ -17,13 +17,17 @@
 			where id = '$id' ";
 			$result = mysqli_query($connect,$sql);
 			$each = mysqli_fetch_array($result);
-
+			if(!isset($each['id'])){
+				$_SESSION['error'] = "Id không chính xác";
+				header('location:index.php');
+			}
 			$sql = "select * from admin
+			group by level
 			 ";
 			$result2 = mysqli_query($connect,$sql);
 			?>
 		</div>
-		<div id="middle">
+		<div id="middle" >
 			<h2>Sửa thông tin nhân viên</h2>
 			<form method="post" action="process_update.php">
 				<input type="hidden" name="id" value="<?php echo $each['id'] ?>">

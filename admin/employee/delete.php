@@ -9,6 +9,12 @@ where id = '$id'";
 $result = mysqli_query($connect,$sql);
 $each = mysqli_fetch_array($result);
 $level = $each['level'];
+$id = $each['id'];
+if($id == $_SESSION['id']){
+	$_SESSION['error'] = 'Bạn không thể xóa chính mình';
+	header('location:index.php');
+	exit;
+}
 //lấy ra lại cái level để if
 if($level == 1){
 	$_SESSION['error'] = 'Bạn không thể xóa Super Admin';

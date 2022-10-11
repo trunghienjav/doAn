@@ -21,9 +21,13 @@ if(isset($_SESSION['error'])){ ?>
 	<div id="general">
 		<div id="top">
 			<span>
-			<?php require '../menu.php';
-			require '../connect.php'; ?>
+				<h2>
+					Khu vực quản lý nhân viên
+				</h2>
+				<?php require '../menu.php';
+				require '../connect.php'; ?>
 			</span>
+			<br>
 			<br>
 			<br>
 			<br>
@@ -33,9 +37,6 @@ if(isset($_SESSION['error'])){ ?>
 			</a>
 		</div>
 		<div id="middle">
-			<h2>
-				Khu vực quản lý nhân viên
-			</h2>
 			<br>
 			<?php
 			$search = '';
@@ -108,10 +109,10 @@ if(isset($_SESSION['error'])){ ?>
 							?>
 						</td>
 						<td>
-							<a href="update.php?id=<?php echo $each['id'] ?>">Sửa</a>
+							<a class="link" style="color: blue;" href="update.php?id=<?php echo $each['id'] ?>">Sửa</a>
 						</td>
 						<td>
-							<a href="delete.php?id=<?php echo $each['id'] ?>">X</a>
+							<a  class="link" style="color: red;" href="delete.php?id=<?php echo $each['id'] ?>">X</a>
 						</td>
 					</tr>
 				<?php endforeach ?>

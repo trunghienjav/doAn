@@ -1,4 +1,5 @@
 <?php
+require 'check_login.php';
 $email = $_POST['email'];
 $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
@@ -32,7 +33,7 @@ $num_rows = mysqli_fetch_array($result)['count(*)'];//count này khi nó in ra t
 //validate xem có trùng email
 if($num_rows == 1){
 	session_start();
-	$_SESSION['error'] = 'Trùng Email rồi, xin hãy nhập lại';
+	$_SESSION['error'] = 'Email đã được đăng kí';
 	header('location:register.php');
 	exit;
 } 

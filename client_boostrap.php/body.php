@@ -24,45 +24,44 @@
     </div>
 
     <div class="karl-projects-menu mb-100">
-        <div class="text-center portfolio-menu">
-            <button class="btn active" data-filter="*">ALL</button>
-            <button class="btn" data-filter="*">WOMAN</button>
-            <button class="btn" data-filter="*">MAN</button>
-            <button class="btn" data-filter="*">ACCESSORIES</button>
-            <button class="btn" data-filter="*">shoes</button>
-            <button class="btn" data-filter="*">KIDS</button>
-        </div>
     </div>
 
     <div class="container">
         
         <div class="row karl-new-arrivals">
             <?php foreach ($result as $each): ?>
-            <!-- Single gallery Item Start -->
-            <div class="col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.3s">
-                <!-- Product Image -->
-                <div class="product-img">
-                    <img src="../admin/products/photos/<?php echo $each['photo'] ?>" alt="">
-                    <div class="product-quicview">
-                        <a href="product_details.php?id=<?php echo $each['id'] ?>" data-toggle="" data-target="#quickview"><i class="ti-plus"></i></a>
+                <!-- Single gallery Item Start -->
+                <div class="col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.3s">
+                    <!-- Product Image -->
+                    <div class="product-img">
+                        <img src="../admin/products/photos/<?php echo $each['photo'] ?>" alt="">
+                        <div class="product-quicview">
+                            <a href="product_details.php?id=<?php echo $each['id'] ?>" data-toggle="" data-target="#quickview"><i class="ti-plus"></i></a>
+                        </div>
                     </div>
-                </div>
-                <!-- Product Description -->
-                <div class="product-description">
-                    <h4 class="product-price">$<?php echo $each['price'] ?></h4>
-                    <p><?php echo $each['name'] ?></p>
-                    <!-- Add to Cart -->
-                     <?php 
+                    <!-- Product Description -->
+                    <div class="product-description">
+                        <h4 class="product-price">$<?php
+                        $price_format = number_format($each['price']) ;
+                        echo $price_format ?></h4>
+                        <p><?php echo $each['name'] ?></p>
+                        <!-- Add to Cart -->
+                        <?php 
                         if(isset($_SESSION['id'])){ ?>
-                            <a href="add_to_cart.php?id=<?php echo $each['id'] ?>" class="add-to-cart-btn">ADD TO CART</a>
+                            <button
+                            data-id='<?php echo $each['id'] ?>'
+                            class="add-to-cart-btn"                              
+                            >
+                            ADD TO CART
+                        </button>
                     <?php } ?>
                 </div>
             </div>
-            <?php endforeach ?>
-        </div>
-
+        <?php endforeach ?>
     </div>
-    <!-- Product Description -->
+
+</div>
+<!-- Product Description -->
 </div>
 
 <!-- Single gallery Item Start -->

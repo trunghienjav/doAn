@@ -45,7 +45,7 @@
 
                             <h4 class="title"><a href="#"><?php echo $each['name'] ?></a></h4>
 
-                            <h4 class="price"><?php echo $each['price'] ?></h4>
+                            <h4 class="price">$<?php echo $each['price'] ?></h4>
 
                             <div class="single_product_ratings mb-15">
                                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -69,16 +69,16 @@
                             <!-- Add to Cart Form -->
                             <?php 
                             if(isset($_SESSION['id'])){ 
-                            ?>
+                                ?>
                                 <form class="cart clearfix mb-50 d-flex" action="add_to_cart.php" method="get">
                                     <input type="hidden" name="id" value="<?php echo $each['id'] ?>">
-                                            <button type="submit" name="addtocart" class="btn cart-submit d-block">Add to cart</button>
+                                    <button type="submit" name="addtocart" class="btn cart-submit d-block">Add to cart</button>
                                 </form>
                             <?php }elseif(empty($_SESSION['id'])){  ?>
-                                        <form class="cart clearfix mb-50 d-flex" action="login.php" method="get">
-                                            <input type="hidden" name="id" value="<?php echo $id ?>">
-                                            <button type="submit" name="addtocart_jump_to_id" class="btn cart-submit d-block">Add to cart</button>
-                                        </form>       
+                                <form class="cart clearfix mb-50 d-flex" action="login.php" method="get">
+                                    <input type="hidden" name="id" value="<?php echo $id ?>">
+                                    <button type="submit" name="addtocart_jump_to_id" class="btn cart-submit d-block">Add to cart</button>
+                                </form>       
                             <?php } ?>
                             <div id="accordion" role="tablist">
                                 <div class="card">

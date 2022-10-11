@@ -25,30 +25,54 @@
 </style>
 </head>
 <body>
-        <?php require 'header.php'; ?>
-        
-        <!-- ****** Top Discount Area End ****** -->
+    <?php require 'header.php'; ?>
 
-        <!-- ****** Welcome Slides Area Start ****** -->
-        <?php require 'body.php'; ?>
-        <!-- ****** Popular Brands Area End ****** -->
+    <!-- ****** Top Discount Area End ****** -->
 
-        <!-- ****** Footer Area Start ****** -->
-       <?php require 'footer.php'; ?>
-        <!-- ****** Footer Area End ****** -->
-    </div>
-    <!-- /.wrapper end -->
+    <!-- ****** Welcome Slides Area Start ****** -->
+    <?php require 'body.php'; ?>
+    <!-- ****** Popular Brands Area End ****** -->
 
-    <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+    <!-- ****** Footer Area Start ****** -->
+    <?php require 'footer.php'; ?>
+    <!-- ****** Footer Area End ****** -->
+</div>
+<!-- /.wrapper end -->
+
+<!-- jQuery (Necessary for All JavaScript Plugins) -->
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Active js -->
+<script src="js/active.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".add-to-cart-btn").click(function() {
+           let id = $(this).data('id');
+           $.ajax({
+            url: 'add_to_cart.php',
+            type: 'GET',
+                    // dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+                    data: {id},
+                })
+           .done(function(response) {
+            // let parent_tr = btn.parents('.cart');
+            // let cart_quantity = parent_tr.find('.cart_quantity').text();
+            if(response == 1){
+                alert('Added to cart');
+            }else{
+                alert('Bạn không thể thêm quá 10 sản phẩm trong giỏ hàng');
+            }
+            
+        });
+       });
+    });
+</script>
 
 </body>
 

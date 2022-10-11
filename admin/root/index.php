@@ -7,7 +7,8 @@ if(isset($_SESSION['error'])){ ?>
 		?>
 	</span>
 <?php }
-require '../check_admin_login.php'; ?>
+require '../check_admin_login.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,9 +19,6 @@ require '../check_admin_login.php'; ?>
 <body>
 	<h2>Đây là giao diện Admin</h2>
 	<?php
-	if(isset($_SESSION['level'])){
-		include '../employee_manager.php';
-	}
 	include '../menu.php';
 	?>
 </body>

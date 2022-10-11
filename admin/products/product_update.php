@@ -3,6 +3,7 @@
 require '../check_admin_login.php';
 
 $id = $_GET['id'];
+
 if(isset($_SESSION['error'])){ ?>
 	<span style="color:red">
 		<?php echo($_SESSION['error']);
@@ -29,6 +30,11 @@ if(isset($_SESSION['error'])){ ?>
 			$result = mysqli_query($connect,$sql);
 			$each = mysqli_fetch_array($result);
 
+			if(!isset($each['id'])){
+				$_SESSION['error'] = "Id không chính xác";
+				header('location:product_update.php');
+				exit;
+			}
 			$sql = "select * from manufactures";
 			$result2 = mysqli_query($connect,$sql);
 

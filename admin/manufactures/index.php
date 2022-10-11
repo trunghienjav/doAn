@@ -1,7 +1,7 @@
 <?php 
 session_start();
 require '../check_super_admin_login.php';
- ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,20 +14,16 @@ require '../check_super_admin_login.php';
 
 	<div id="general">
 		<div id="top">
-		<h1>Khu vực nhà sản xuất</h1>
-		<a class="link" href="manufacture_insert.php">
-			Thêm nhà sản xuất
-		</a>
-		<?php include '../menu.php' ; ?>
-		<br>
-		<br>
-		<br>
-		<?php
-		if($_SESSION['level'] == 1){
-			include '../employee_manager.php';
-		}
-		//nếu là s_admin thì nó sẽ hiện ra mục employee manager
-		?>		
+			<h2>Khu vực nhà sản xuất</h2>
+			<?php include '../menu.php' ; ?>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<a style="color: red;" href="manufacture_insert.php">
+				Thêm nhà sản xuất
+			</a>	
 		</div>
 		<?php 
 		require '../connect.php';
@@ -118,7 +114,7 @@ require '../check_super_admin_login.php';
 				<?php echo $i ?>
 			</a>
 		<?php } ?>
-		</div>
+	</div>
 	<?php require '../footer.php' ?>
 </div>
 
