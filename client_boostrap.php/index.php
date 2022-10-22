@@ -1,5 +1,19 @@
-<?php session_start(); ?>
-
+<?php session_start();
+if(isset($_COOKIE['remember'])){
+    $token = $_COOKIE['remember'];
+    require '../admin/connect.php';
+    $sql = "select * from customers
+    where token = '$token'
+    limit 1 ";
+    $result = mysqli_query($connect,$sql);
+    $num_rows = mysqli_num_rows($result);
+    if($num_rows == 1){
+        $each = mysqli_fetch_array($result);
+        $_SESSION['id'] = $each['id'];
+        $_SESSION['name'] = $each['name'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
