@@ -1,6 +1,7 @@
 Đồ án Web bán hàng của mình viết bằng thuần PHP với 2 đối tượng sử dụng chính:
-+ Quản lý 
++ Quản lý
 + Khách hàng
+
 Các tính năng :
 
 + Bên quản lí:
