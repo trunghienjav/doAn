@@ -28,6 +28,6 @@ Các tính năng :
 4. MySQL
 5. JavaScript
 
-Đây là đồ án đầu tiên của mình sau khi học xong khóa học lập trình PHP cơ bản trên Youtube của anh Nguyễn Nam Long bên J2Team
-Đồ án còn nhiều sơ sài và thiếu sót
-Xin gửi lời cảm ơn anh Long vì những bài học bổ ích mà anh đã truyền dạy
+Đây là đồ án đầu tiên của mình sau khi học xong khóa học lập trình PHP cơ bản trên Youtube của anh Nguyễn Nam Long bên J2Team.
+Đồ án còn nhiều sơ sài và thiếu sót.
+Xin gửi lời cảm ơn anh Long vì những bài học bổ ích mà anh đã truyền dạy.
