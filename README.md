@@ -2,7 +2,8 @@
 + Quản lý 
 + Khách hàng
 Các tính năng :
-+BÊN QUẢN LÝ:
+
++ Bên quản lí:
 - Đăng kí, đăng nhập, đăng xuất
 - Quên mật khẩu, ghi nhớ đăng nhập
 - Quản lí nhà sản xuất
@@ -10,7 +11,8 @@ Các tính năng :
 - Quản lí đơn hàng
 - Quản lí nhân viên
 - Thống kê (tháng bán được bao nhiêu đơn, sản phẩm bán chạy nhất)
-+BÊN KHÁCH HÀNG:
+  
++ Bên khách hàng:
 - Đăng kí, đăng nhập, đăng xuất
 - Quên mật khẩu, ghi nhớ đăng nhập
 - Giỏ hàng
@@ -18,7 +20,7 @@ Các tính năng :
 - Đánh giá sản phẩm
 - Xem lịch sử mua hàng
 
-+CÔNG NGHỆ SỬ DỤNG :
++ CÔNG NGHỆ SỬ DỤNG :
 - PHP 7.4
 - HTML 5
 - CSS
